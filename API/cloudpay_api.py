@@ -47,3 +47,6 @@ class CloudPayClient(AbstractInteractionClient):
             else:
                 return Secure3D.create(resp["Model"])
         return resp
+
+    async def cancel_payed(self, crtyptogram: str):
+        pass 
