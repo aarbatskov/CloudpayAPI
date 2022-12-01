@@ -1,3 +1,4 @@
+
 import asyncio
 import os
 from API.cloudpay_api import CloudPayClient
@@ -7,8 +8,8 @@ CLOUDPAY_PASSWORD = os.getenv("APISecret", "password")
 
 
 async def main():
-    a = await CloudPayClient.create(CLOUDPAY_LOGIN, CLOUDPAY_PASSWORD)
-    resp = await a.pay_with_crypto(amount=50, ip_address="127.0.0.0", cryptogram='sfdsf')
+    client = await CloudPayClient.create(CLOUDPAY_LOGIN, CLOUDPAY_PASSWORD)
+    resp = await client.pay_with_crypto(amount=50, ip_address="127.0.0.0", cryptogram='sfdsf')
 
 
 if __name__ == '__main__':
